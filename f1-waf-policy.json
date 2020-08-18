@@ -6,7 +6,7 @@
         "enforcementMode": "blocking",
         "response-pages": [
             {
-                "responseContent": "{\"Custom WAF Blockpage\":{\"supportid\"=\"<%TS.request.ID()%>\"}}"
+                "responseContent": "{\"Custom WAF Blockpage\":{\"supportid\"=\"<%TS.request.ID()%>\"}}",
                 "responseHeader": "HTTP/1.1 302 OK\\r\\nCache-Control: no-cache\\r\\nPragma: no-cache\\r\\nConnection: close",
                 "responseActionType": "custom",
                 "responsePageType": "default"
