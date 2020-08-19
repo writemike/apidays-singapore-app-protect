@@ -6,19 +6,19 @@
   tasks:
   - name: "Ensure NGINX WAF Policy Directory Exists"
     file:
-      path: "{{ nginx_main_upload_dest | default('/etc/nginx/wafpolicy') }}"
+      path: "{{ nginx_main_upload_dest | default('/etc/nginx/approtect/waf-policy') }}"
       state: directory
 
-  - name: "Upload NGINX Updated WAF Policy - DVWA"
+  - name: "Upload NGINX Updated WAF Policy - f1-api"
     copy:
-      src: "{{ nginx_main_upload_src | default('dvwa-policy-v1.json') }}"
-      dest: "{{ nginx_main_upload_dest | default('/etc/nginx/wafpolicy') }}"
+      src: "{{ nginx_main_upload_src | default('f1-waf-policy.json') }}"
+      dest: "{{ nginx_main_upload_dest | default('/etc/nginx/approtect/waf-policy') }}"
       backup: no
       
   - name: "Upload NGINX Updated WAF Policy - Default Policy"
     copy:
       src: "{{ nginx_main_upload_src | default('NginxDefaultPolicy.json') }}"
-      dest: "{{ nginx_main_upload_dest | default('/etc/nginx/wafpolicy') }}"
+      dest: "{{ nginx_main_upload_dest | default('/etc/nginx/approtect/waf-policy') }}"
       backup: no
       
   - name: "Upload NGINX Configuration File"
