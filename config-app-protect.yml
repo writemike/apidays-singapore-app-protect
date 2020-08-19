@@ -1,6 +1,6 @@
 ---
 - name: Update NAP Config
-  hosts: 10.10.0.2
+  hosts: nginx
   gather_facts: no
 
   tasks:
